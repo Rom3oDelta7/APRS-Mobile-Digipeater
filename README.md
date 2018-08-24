@@ -153,6 +153,9 @@ Most of them are default settings, though, so you don't need to do them all!
 * Be certain your BTEXT string begins with ">" and the TSTAT string begins with "/" or things will not work.
 * TOSV must be false to broadcast the location without a GPS attached.
 Set this to true if you don't want to broadcast the digipeater's location.
+* The TXLEVEL and RXAMP settings were tuned for my HT.
+If you use the same radio these will probably work, but I suggest you verify the calibration using the process explained
+in the [TT4 Quick Start Guide].
 * You may wish to adjust the settings that determine how often things are transmitted.
 If your local APRS net is busy, try not to overwhelm it with unnecessary broadcasts.
 Remember, in APRS every packet is broadcast multiple times, all on the same frequency.
@@ -191,3 +194,4 @@ A very complete description of how APRS paths work can be found at http://wa8lmf
 [interface cable]: https://www.byonics.com/ht_cables
 [Byonics TT4 LCD display]: https://www.byonics.com/tinytrak4
 [Yavapai County ARES/RACES emergency response group]: https://www.k7yca.org
+[TT4 Quick Start Guide]: https://www.byonics.com/downloads/TinyTrak4%20Quick%20Start%20Guide%20v0.7.pdf
