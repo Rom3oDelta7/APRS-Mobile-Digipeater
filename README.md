@@ -8,27 +8,27 @@ What makes APRS different from using a mobile phone is that APRS uses amateur (h
 A large network of APRS repeaters (aka digipeaters) operate similarly to the ham voice repeater network, with the important distinction that there is only a single frequency (no split).
 (Note that the use of APRS requires an FCC amateur radio license).
 
-Currently, the [Yavapai Amateur Radio Club](https://www.w7yrc.org "YARC") provides event communications for over a dozen public events each year in Yavapai County.
+Currently, the [Yavapai Amateur Radio Club](https://www.w7yrc.org "YARC")(YARC) provides event communications for over a dozen public events each year in Yavapai County.
 A large contingent of YARC members staff multiple stations along the course providing race status information, transportation requests for participants
 who are unable to continue, and safety-related information such as vehicles trespassing on the closed course or participants in need of medical attention.
 Many of these events are quite extensive, covering a large geographic area and encompassing well over one thousand participants.
 These larger events, in particular, are outside of urban centers and cover such a widespread area that amateur radio is the only consistent means of communication for the event.
 A key component to providing event communications is managing the course vehicles, which are typically provided by the event organizers
 and staffed with a YARC member as a passenger to provide communications.
-These vehicles handle logistics such as participant pickup, supplies and equipment, and “sweeping” the event to track the end of the race
+These vehicles handle logistics such as participant pickup, supplies and equipment (SAG), and “sweeping” the event to track the end of the race
 and ensure that all participants get back safely.
 This is a very dynamic situation with assignments frequently changing with the flow of the event.
 As such, keeping track of the current location of these vehicles is critical to ensure the right vehicle is assigned to a given task.
 
 Our club is using mobile APRS transmitters in these vehicles to track their location.
 APRS packets are received over a VHF frequency and decoded. 
-The decided GPS information is used to plot the position on a map.
+The decoded GPS information is used to plot the position on a map.
 Internet services, such as https://aprs.fi can be used for tracking, but in our situation the Internet isn't available, so we use [UI-View] software instead.
 
-While the aforementioned network of digipeaters vastly increases the coverage area for APRS, Yavapai County terrain can be vary significantly, resulting in coverage gaps especially
+While the aforementioned network of digipeaters vastly increases the coverage area for APRS, Yavapai County terrain can vary significantly, resulting in coverage gaps especially
 on the trails used for mountain bike and marathon events.
 The portable APRS digipeater was designed and built to address this problem.
-We use terrain mapping software([ubiquiti] or [radio mobile]) to determine the best location to cover the event area and we preposition the MAD before the start of the event.
+We use terrain mapping software ([ubiquiti] or [radio mobile]) to determine the best location to cover the event area and we preposition the MAD before the start of the event.
 Properly placed, the MAD will relay the packets from our tracking units to one of the 3 area mountaintop APRS digipeaters, enabling position reports to be received in our communications van.
 To simplify deployment, everything is pre-programmed so all one needs to do is to attach an antenna and power it on.
 
@@ -42,7 +42,7 @@ It is encased in a Pelican-like case with foam cutout spaces for the SLA battery
 [![MAD external view](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20exterior.jpg)](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20exterior.jpg)
 
 
-The control unit housing contains the Byonics TinyTracker4 (TT4) transceiver, HT adapter cable, and a 4-line LCD to display decoded APRS messages.
+The control unit housing contains the Byonics TinyTracker4 (TT4) transceiver, HT adapter cable, DC buck converter, and a 4-line LCD to display decoded APRS messages.
 
 ### Case
 
@@ -76,15 +76,15 @@ We keep the HT keyboard locked when in use.
 
 ### Control Unit
 
-The control unit houses the [Byonics TT4 APRS transceiver], Byonics HTK2P [interface cable], and the [Byonics TT4 LCD display].
+The control unit houses the [Byonics TT4 APRS transceiver], Byonics HTK2P [interface cable], the [Byonics TT4 LCD display], and a DC-DC buck converter.
 A mount is provided for the TT4 PCB, with adequate space to attach the interface cable inside the enclosure.
 There is an opening for the DB9 serial connection required for programming.
 You will need either a DB9 serial with null modem or a USB to serial adapter, e.g. FTDI (null modem), to configure the TT4.
 Supposedly, a PS2 keyboard can be connected to the LCD adapter board and used to configure the TT4, but I did not verify that this approach works.
-There are also 2 panel-mount PowerPole connections, one on the left side for power in, and one on the right to power the HT.
+There are also 2 panel-mount PowerPole connections: one on the left side for power in, and one on the right to power the HT.
 I used the Baofeng 12V battery adapter, but the voltage regulation electronics are in the 12V lighter socket assembly, and thus
 useless in this application.
-Instead, the 12V battery power is routed through a DC buck converter to reduce the voltage to 7.8V for the HT.
+Instead, the 12V battery power is routed through a DC-DC buck converter to maintain the HT voltage at 7.8V.
 A Powerwerx PowerPole distribution hub is included to manage the power connections inside the enclosure.
 
 The top has the power switch and the LCD display.
@@ -114,6 +114,7 @@ There are no special requirements for the battery, but I prefer the Keyko AGM ge
 ## Assembly Notes
 
 Helpful hints for assembly:
+* The Bill of Materials (BOM) file in the repo has links to purchase the required components.
 * The diameter of the PowerPole panel mount is 22mm.
 * The external PowerPole connector goes directly to the battery, with a parallel connection going to the control unit (left side connector).
 This branch has a 5A inline blade fuse.
@@ -143,10 +144,10 @@ You could possibly have issues with the case print if your nozzle is significant
 Everything else rests on top of the first insert.
 * I use a BatteryTender to charge the battery.
 I built a cable with the standard "split" connector on one side and PowerPole connectors on the other to allow
-the battery to be charged without removing it using the side connector.
+the battery to be charged using the side connector without removing it.
 * The TT4 config settings can be a bit touchy.
 You can use the TT4 settings file in this repo - just change "MYCALL" to your callsign and SSID (e.g. W7YRC-15 in our case).
-(This is just a screen capture of the "display" command output.)
+(This file is just a screen capture of the "display" command output.)
 Unfortunately, there is no way to upload a settings file to the TT4, so you'll need to manually enter each setting.
 Most of them are default settings, though, so you don't need to do them all!
 * Be certain your BTEXT string begins with ">" and the TSTAT string begins with "/" or things will not work.
@@ -162,14 +163,23 @@ Remember, in APRS every packet is broadcast multiple times, all on the same freq
 The MAD was designed to be as simple as possible to operate. 
 Prior to deploying the unit, we select the best location as previously described, and configure the GPS location (degrees and decimal minutes followed by the heading, e.g. DDMM.mmmmH).
 The ham operator who deploys the unit (and acts as the control operator) simply attaches the best available antenna and switches the unit on.
-The club can provide operators a SMA whip antenna or an SMA magmount antenna.
-In addition, we keep an SMA to SO-239 adapter cable between the inside of the lid and the top foam insert to allow use with an antenna with a UHF connector,
+The club can provide operators an SMA whip antenna or an SMA magmount antenna.
+In addition, we keep an SMA to SO-239 adapter cable between the inside of the lid and the top foam insert to allow use of an antenna with a UHF connector,
 e.g. a mast or other vertical.
 
 To confirm the unit is operating properly, 2 things can be observed:
 1. The LCD display will display the last decoded packet.
 We ask operators to periodically check that this is being updated.
 1. The adapter cable silences the HT's speaker, but the HT LCD will turn blue while receiving and orange when transmitting (see settings, above).
+
+Most APRS packets are set to be rebroadcast 2-3 times.
+With the config settings in the repo the MAD is configured as a fill-in digipeater, so it will "consume" one of these broadcast slots, including the WIDE1 slot.
+Since this includes your event APRS packets along with everyone else's, when placing the unit be sure it has a path to the next hop, typically a mountaintop digipeater.
+This is only one approach to operating - you can alter this behavior by setting the TT4 PATH and ALIAS variables appropriately.
+While explicit paths are an option, we chose not to take that approach because the MAD will not be in range of all APRS transmitters
+and do not always have the ability to configure all of the APRS devices in an event.
+A very complete description of how APRS paths work can be found at http://wa8lmf.net/DigiPaths.
+
 
 
 
