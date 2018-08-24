@@ -50,6 +50,8 @@ The MAD is housed in an Apache 2800 12" IP65 weatherproof case.
 There is a panel-mount PowerPole connection on the side that provides a direct connection to the 12V SLA battery, either for 12V out or to charge the battery.
 On the top is an SMA-F antenna mount.
 
+[![MAD side view](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20side.jpg)](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20side.jpg)
+
 ### Radio
 
 I chose a Baofeng UV82HP HT for the radio. 
@@ -70,7 +72,7 @@ I did not program the radio, other than to set the 144.390 MHz APRS frequency an
 * 35: STE OFF
 * 39: Roger beep OFF
 
-We keep the unit keyboard locked when in use.
+We keep the HT keyboard locked when in use.
 
 ### Control Unit
 
@@ -91,9 +93,7 @@ the TT4, HT, and display.
 
 [![MAD internal view](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20lid%20open.jpg)](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/MAD%20lid%20open.jpg)
 
-When assembling the unit, manage your wire gauge and length carefully, as the case is a tight fit. 
-I used 14 AWG wire is overkill given the low power draw, but that's what I had on hand and what would fit the crimped PowerPole connectors.
-16 AWG would probably be a better choice, with the smaller gauge PowerPole crimp connectors, of course.
+[![MAD internal view](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/control%20unit%20interior.jpg)](https://github.com/Rom3oDelta7/APRS-Mobile-Digipeater/blob/master/Photos/control%20unit%20interior.jpg)
 
 I chose to use the _assembled_ TT4 and the LCD display _kit_.
 The rationale for this is that the assembled SMT board, unlike the through-hole (PTH) kit, has a header for the display unit.
@@ -109,8 +109,51 @@ You can either print the washer to secure the TT4 PCB to the case or just use a 
 ### Battery
 
 The battery is a standard 12V sealed lead acid (SLA) battery, with a 5A blade fuse on the positive lead.
-The battery is mounted upside down to simplify the wiring.
 There are no special requirements for the battery, but I prefer the Keyko AGM gel batteries.
+
+## Assembly Notes
+
+Helpful hints for assembly:
+* The diameter of the PowerPole panel mount is 22mm.
+* The external PowerPole connector goes directly to the battery, with a parallel connection going to the control unit (left side connector).
+This branch has a 5A inline blade fuse.
+* The battery is mounted upside down to simplify the wiring and maintain a "clean" look.
+* The control unit is a tight fit;
+it needs to fit inside the Apache case, and many small printers have a limit of 150mm.
+Therefore, to provide some flexibility in stuffing everything in, the PowerPole hub is not attached to the case.
+* Fasteners:
+  * 4 #2 1/4" pan head screws for the LCD
+  * 2 #2 1/4" pan head screws for the buck converter
+  * 1 #2 1/4" pan head screw for the TT4
+  * 6 #2 3/8" flat head screws to secure the lid to the case
+* When printing the PowerPole panel mounts, I used 0.1mm layers, with the first layer at 300%.
+The face (bottom) did not print well with the first layer at 0.1mm.
+However, the screw (and nut) threads need a very fine layer setting to move properly, so all but the first layer is printed at 0.1mm.
+* When assembling the unit, manage your wire gauge and length carefully due to the tight fit. 
+I used 14 AWG wire, which is overkill given the low power draw, but that's what I had on hand and what would fit the crimped PowerPole connectors.
+16 AWG would probably be a better choice, with the smaller gauge PowerPole crimp connectors, of course.
+* On the Baofeng HT 12V adapter, I cut the cord where it starts to coil and soldered the very thin wires to 2 14 AWG stubs that were crimped to the PowerPole connectors. 
+Be sure your wire gauge is thick enough to get a solid crimp.
+(And use PowerPole crimpers, not pliers, please!).
+* The enclosure design was done with a 0.5mm printer nozzle in mind.
+You could possibly have issues with the case print if you nozzle is significantly different.
+* Be sure to use supports when printing the base, especially for the 2 rectangular openings.
+* The battery goes though both foam inserts.
+Everything else rests on top of the first insert.
+
+## Operation
+
+The MAD was designed to be as simple as possible to operate. 
+Prior to deploying the unit, we select the best location as previously described, and configure the GPS location (degrees and decimal minutes followed by the heading, e.g. DDMM.mmmmH).
+The ham operator who deploys the unit (and acts as the control operator) simply attaches the best available antenna and switches the unit on.
+The club can provide operators a SMA whip antenna or an SMA magmount antenna.
+In addition, we keep an SMA to SO-239 adapter cable between the inside of the lid and the top foam insert to allow use with an antenna with a UHF connector,
+e.g. a mast or other vertical.
+
+To confirm the unit is operating properly, 2 things can be observed:
+1. The LCD display will display the last decoded packet.
+We ask operators to periodically check that this is being updated.
+1. The adapter cable silences the HT's speaker, but the HT LCD will turn blue while receiving and orange when transmitting (see settings, above).
 
 
 
