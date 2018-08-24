@@ -118,6 +118,7 @@ Helpful hints for assembly:
 * The external PowerPole connector goes directly to the battery, with a parallel connection going to the control unit (left side connector).
 This branch has a 5A inline blade fuse.
 * The battery is mounted upside down to simplify the wiring and maintain a "clean" look.
+* Note the spare fuse taped to the bottom of the battery.
 * The control unit is a tight fit;
 it needs to fit inside the Apache case, and many small printers have a limit of 150mm.
 Therefore, to provide some flexibility in stuffing everything in, the PowerPole hub is not attached to the case.
@@ -140,6 +141,9 @@ You could possibly have issues with the case print if you nozzle is significantl
 * Be sure to use supports when printing the base, especially for the 2 rectangular openings.
 * The battery goes though both foam inserts.
 Everything else rests on top of the first insert.
+* I use a BatteryTender to charge the battery.
+I built a cable with the standard "split" connector on one side and PowerPole connectors on the other to allow
+the battery to be charged without removing it by using the side connector.
 
 ## Operation
 
