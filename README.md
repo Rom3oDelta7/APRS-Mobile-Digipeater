@@ -20,7 +20,7 @@ and ensure that all participants get back safely.
 This is a very dynamic situation with assignments frequently changing with the flow of the event.
 As such, keeping track of the current location of these vehicles is critical to ensure the right vehicle is assigned to a given task.
 
-Currently, our club is using mobile APRS transmitters in these vehicles to track their location.
+Our club is using mobile APRS transmitters in these vehicles to track their location.
 APRS packets are received over a VHF frequency and decoded. 
 The decided GPS information is used to plot the position on a map.
 Internet services, such as https://aprs.fi can be used for tracking, but in our situation the Internet isn't available, so we use [UI-View] software instead.
