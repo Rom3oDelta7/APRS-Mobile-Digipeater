@@ -137,13 +137,13 @@ I used 14 AWG wire, which is overkill given the low power draw, but that's what 
 Be sure your wire gauge is thick enough to get a solid crimp.
 (And use PowerPole crimpers, not pliers, please!).
 * The enclosure design was done with a 0.5mm printer nozzle in mind.
-You could possibly have issues with the case print if you nozzle is significantly different.
+You could possibly have issues with the case print if your nozzle is significantly different.
 * Be sure to use supports when printing the base, especially for the 2 rectangular openings.
-* The battery goes though both foam inserts.
+* The battery goes through both foam inserts.
 Everything else rests on top of the first insert.
 * I use a BatteryTender to charge the battery.
 I built a cable with the standard "split" connector on one side and PowerPole connectors on the other to allow
-the battery to be charged without removing it by using the side connector.
+the battery to be charged without removing it using the side connector.
 
 ## Operation
 
