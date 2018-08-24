@@ -144,6 +144,18 @@ Everything else rests on top of the first insert.
 * I use a BatteryTender to charge the battery.
 I built a cable with the standard "split" connector on one side and PowerPole connectors on the other to allow
 the battery to be charged without removing it using the side connector.
+* The TT4 config settings can be a bit touchy.
+You can use the TT4 settings file in this repo - just change "MYCALL" to your callsign and SSID (e.g. W7YRC-15 in our case).
+(This is just a screen capture of the "display" command output.)
+Unfortunately, there is no way to upload a settings file to the TT4, so you'll need to manually enter each setting.
+Most of them are default settings, though, so you don't need to do them all!
+* Be certain your BTEXT string begins with ">" and the TSTAT string begins with "/" or things will not work.
+* TOSV must be false to broadcast the location without a GPS attached.
+Set this to true if you don't want to broadcast the digipeater's location.
+* You may wish to adjust the settings that determine how often things are transmitted.
+If your local APRS net is busy, try not to overwhelm it with unnecessary broadcasts.
+Remember, in APRS every packet is broadcast multiple times, all on the same frequency.
+
 
 ## Operation
 
