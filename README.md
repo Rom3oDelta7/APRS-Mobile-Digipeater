@@ -177,7 +177,7 @@ With the config settings in the repo the MAD is configured as a fill-in digipeat
 Since this includes your event APRS packets along with everyone else's, when placing the unit be sure it has a path to the next hop, typically a mountaintop digipeater.
 This is only one approach to operating - you can alter this behavior by setting the TT4 PATH and ALIAS variables appropriately.
 While explicit paths are an option, we chose not to take that approach because the MAD will not be in range of all APRS transmitters
-and do not always have the ability to configure all of the APRS devices in an event.
+and we do not always have the ability to configure all of the APRS devices in an event.
 A very complete description of how APRS paths work can be found at http://wa8lmf.net/DigiPaths.
 
 
