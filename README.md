@@ -183,8 +183,11 @@ While explicit paths are an option, we chose not to take that approach because t
 and we do not always have the ability to configure all of the APRS devices in an event.
 A very complete description of how APRS paths work can be found at http://wa8lmf.net/DigiPaths.
 
+# Copyright Notice
 
-
+Copyright 2018 Rob Redford.
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit [BY-SA].
 
 
 [ubiquiti]: https://airlink.ubnt.com/#/ptp
@@ -195,3 +198,5 @@ A very complete description of how APRS paths work can be found at http://wa8lmf
 [Byonics TT4 LCD display]: https://www.byonics.com/tinytrak4
 [Yavapai County ARES/RACES emergency response group]: https://www.k7yca.org
 [TT4 Quick Start Guide]: https://www.byonics.com/downloads/TinyTrak4%20Quick%20Start%20Guide%20v0.7.pdf
+[BY-SA]: https://creativecommons.org/licenses/by-sa/4.0/
+
