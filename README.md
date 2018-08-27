@@ -175,6 +175,10 @@ To confirm the unit is operating properly, 2 things can be observed:
 We ask operators to periodically check that this is being updated.
 1. The adapter cable silences the HT's speaker, but the HT LCD will turn blue while receiving and orange when transmitting (see settings, above).
 
+I have tested the run time of the MAD up to 22 hours.
+The battery level drops below 12V, but both the TT4 and the UV82HP operate at much lower voltages,
+so it is safe to assume the unit can operate much longer than 22 hours.
+
 Most APRS packets are set to be rebroadcast 2-3 times.
 With the config settings in the repo the MAD is configured as a fill-in digipeater, so it will "consume" one of these broadcast slots, including the WIDE1 slot.
 Since this includes your event APRS packets along with everyone else's, when placing the unit be sure it has a path to the next hop, typically a mountaintop digipeater.
